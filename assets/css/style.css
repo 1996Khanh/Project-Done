@@ -231,6 +231,10 @@
 section {
     padding: 100px 200px;
 }
+/* Edit font-family from monospace to inherit (10/8) */
+p {
+    font-family: inherit;
+}
 .home .text-content{
     z-index: 8;
     font-size: 1.5rem;
@@ -282,7 +286,9 @@ section {
     height: 416px;
 }
 .bakery__story-text {
-    margin: 40px 20px 0 -50px;
+    /*margin: 40px 20px 0 -50px;*/
+    margin: 0 0 0 -50px;
+    padding-left: 50px;
     text-align: justify;
 }
 .story-text-heading {
@@ -646,7 +652,7 @@ section {
 }
 .form-control {
     height: 42px !important;
-    width: 390px;
+    width: 365px !important;
     border-radius: 0 !important;
     font-size: 1.5rem !important;
     color: #696969 !important;

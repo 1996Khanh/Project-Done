@@ -46,9 +46,9 @@ div .contact-info{
 .contact-section{
     margin-bottom: 50px;
 }
-.form-control .textForm{
-    width: 85%;
-}
+/*.form-control .textForm{*/
+/*    width: 85%;*/
+/*}*/
 
 /* Button */
 .btn-primary{
@@ -63,7 +63,7 @@ div .contact-info{
     font-weight: 600;
     font-size: 1.5rem;
 }
-.sub-input-btn {
+.subsc-input-btn {
     /*width: 100px;*/
     background-color: var(--primary-color);
     color: var(--white-color);
