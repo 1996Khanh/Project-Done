@@ -1,7 +1,9 @@
+/* Got any questions? text */
 div .contact-info{
     font-size: 1.2rem;
 }
-/* Chỉnh font-size 1.2-1.3rem */
+
+/* Input comment (textarea) */
 #inputComment{
     resize: both;
     max-width: 100%;
@@ -10,15 +12,18 @@ div .contact-info{
     min-height: 75px;
 }
 
+/* Input fields */
 .form-label {
     display: block;
     /*font-size: 1.3rem;*/
 }
+/* Contact form when focus */
 .contact-form input:focus{
     /*outline: none !important;*/
     /*border: 0;*/
     border: 1px solid #ccc;
 }
+/* Comment section */
 .text-input-area {
     padding-left: 7px !important;
     /*border-radius: 0 !important;*/
@@ -36,6 +41,8 @@ div .contact-info{
 .text-input-area textarea:focus{
     outline: none;
 }
+
+/* Whole Contact section */
 .contact-section{
     margin-bottom: 50px;
 }
@@ -43,6 +50,7 @@ div .contact-info{
     width: 85%;
 }
 
+/* Button */
 .btn-primary{
     margin-bottom: 20px;
 }
@@ -80,11 +88,13 @@ input:focus:valid{
     border-bottom: 2px solid var(--success-color);
 }
 
+/* Contact info description */
 p.desc{
     margin-top: 1.55rem;
     margin-bottom: -16px;
 }
 
+/* Map + info */
 .contact-map{
     margin-bottom: 20px;
 }
