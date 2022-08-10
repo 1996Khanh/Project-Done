@@ -9,10 +9,22 @@ app.config(function($routeProvider) {
         templateUrl: 'faq.html',
         controller: 'FAQController'
     })
+    .when('/contact', {
+      templateUrl: 'contact.html',
+      controller: 'contactController'
+    })
     .when('/cart', {
         templateUrl: 'cart.html',
         controller: 'CartController'
     })
+    .when('/checkout', {
+      templateUrl:'checkout.html',
+      controller: 'checkoutController'
+    })
+    // .when('/about', {
+    //   templateUrl: 'about.html',
+    //   controller: 'aboutController'
+    // })
 
     .otherwise({redirectTo: '/'});
 });
@@ -28,8 +40,15 @@ app.controller(
 app.controller(
     'CartController', function($scope){
         CartController()
-    }
-)
+    });
+app.controller(
+  'contactController',function($scope){
+    contactController()
+    });
+app.controller(
+  'aboutController',function($scope){
+    aboutController()
+  });
 
 
 function IndexController(){
@@ -1635,105 +1654,6 @@ function IndexController(){
     };
   })( jQuery, window, document );
 
-
-  // about
-  var swiper = new Swiper(".slide-content", {
-    slidesPerView: 3,
-    spaceBetween: 25,
-    loop: true,
-    centerSlede:'true',
-    fade:'true',
-    grapCursor:'true',
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-
-    breakpoints: {
-        1: {
-            slidesPerView: 1,
-        },
-
-        740: {
-            slidesPerView: 2,
-        },
-
-        1024: {
-            slidesPerView: 3,
-        },
-    },
-  });
-
-  $(document).ready(function($) {
-    $('.count-number').counterUp({
-        delay: 10,
-        time: 10000
-    });
-  });
-
-
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    slidesPerGroup: 3,
-    loop: true,
-    loopFillGroupWithBlank: true,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false,
-    },
-    breakpoints: {
-        1: {
-            slidesPerView: 1,
-        },
-
-        740: {
-            slidesPerView: 2,
-        },
-
-        1024: {
-            slidesPerView: 3,
-        },
-    },
-
-  });
-    var meNu = document.querySelector('.js-header-menu');
-    var modal = document.querySelector('.js-modal1996');
-    var modalContainer = document.querySelector('.js-modal-container1996');
-    var modalClose = document.querySelector('.js-modal-close');
-
-    function showHeader () {
-        modal.classList.add('open')
-    }
-
-    function hidenHeader () {
-        modal.classList.remove('open')
-    }
-
-    meNu.addEventListener('click',showHeader)
-    modalClose.addEventListener('click',hidenHeader)
-    modal.addEventListener('click',hidenHeader)
-    modalContainer.addEventListener('click', function (event) {
-        event.stopPropagation()
-    })
 }
 function FAQController(){
   $('.main-header').addClass('basic-header')
@@ -1754,4 +1674,171 @@ for (i = 0; i < acc.length; i++) {
   });
 }
 
+}
+function contactController(){
+  $('.main-header').addClass('basic-header');
+}
+function CartController(){
+  $('.main-header').addClass('basic-header');
+
+
+    /*-------------------
+		Quantity change
+	--------------------- */
+  'use strict';
+
+(function ($) {
+  var proQty = $('.pro-qtys');
+	proQty.prepend('<span class="decs qtybtns">-</span>');
+	proQty.append('<span class="incs qtybtns">+</span>');
+	proQty.on('click', '.qtybtns', function () {
+		var $button = $(this);
+		var oldValue = $button.parent().find('input').val();
+		if ($button.hasClass('incs')) {
+			var newVal = parseFloat(oldValue) + 1;
+		} else {
+			// Don't allow decrementing below zero
+			if (oldValue > 0) {
+				var newVal = parseFloat(oldValue) - 1;
+			} else {
+				newVal = 0;
+			}
+		}
+		$button.parent().find('input').val(newVal);
+	});
+
+})(jQuery);
+
+}
+function aboutController(){
+  $('.main-header').addClass('basic-header');
+
+
+  var meNu = document.querySelector('.js-menu');
+  var modal = document.querySelector('.js-modal1996');
+  var modalContainer = document.querySelector('.js-modal-container1996');
+  var modalClose = document.querySelector('.js-modal-close');
+
+  function showHeader () {
+      modal.classList.add('open')
+  }
+
+  function hidenHeader () {
+      modal.classList.remove('open')
+  }
+
+  meNu.addEventListener('click',showHeader)
+  modalClose.addEventListener('click',hidenHeader)
+  modal.addEventListener('click',hidenHeader)
+  modalContainer.addEventListener('click', function (event) {
+      event.stopPropagation()
+  })
+
+  $('#why-choose-us-how-to-heading1').click(function(event){
+    $('.why-choose-us-how-to-discription1').toggle();
+    $('#why-choose-us-how-to-heading1').toggleClass("blue1996");
+    $('#why-choose-us-how-to-heading2').removeClass("blue1996")
+    $('#why-choose-us-how-to-heading3').removeClass("blue1996")
+    $('.why-choose-us-how-to-discription2').hide();
+    $('.why-choose-us-how-to-discription3').hide();
+});
+
+
+
+$('#why-choose-us-how-to-heading2').click(function(){
+    $('.why-choose-us-how-to-discription2').toggle();
+    $('#why-choose-us-how-to-heading2').toggleClass("blue1996");
+    $('#why-choose-us-how-to-heading1').removeClass("blue1996")
+    $('#why-choose-us-how-to-heading3').removeClass("blue1996")
+    $('.why-choose-us-how-to-discription1').hide();
+    $('.why-choose-us-how-to-discription3').hide();
+})
+$('#why-choose-us-how-to-heading3').click(function(){
+    $('.why-choose-us-how-to-discription3').toggle();
+    $('#why-choose-us-how-to-heading3').toggleClass("blue1996");
+    $('#why-choose-us-how-to-heading1').removeClass("blue1996")
+    $('#why-choose-us-how-to-heading2').removeClass("blue1996")
+    $('.why-choose-us-how-to-discription1').hide();
+    $('.why-choose-us-how-to-discription2').hide();
+})
+
+
+var swiper = new Swiper(".slide-content", {
+slidesPerView: 3,
+spaceBetween: 25,
+loop: true,
+centerSlede:'true',
+fade:'true',
+grapCursor:'true',
+pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+  dynamicBullets: true,
+},
+navigation: {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev",
+},
+
+autoplay: {
+  delay: 6000,
+  disableOnInteraction: false,
+},
+
+breakpoints: {
+    1: {
+        slidesPerView: 1,
+    },
+
+    740: {
+        slidesPerView: 2,
+    },
+
+    1024: {
+        slidesPerView: 3,
+    },
+},
+});
+
+$(document).ready(function($) {
+$('.count-number').counterUp({
+    delay: 10,
+    time: 10000
+});
+});
+
+
+var swiper = new Swiper(".mySwiper", {
+slidesPerView: 3,
+spaceBetween: 30,
+slidesPerGroup: 3,
+loop: true,
+loopFillGroupWithBlank: true,
+pagination: {
+  el: ".swiper-pagination",
+  clickable: true,
+},
+navigation: {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev",
+},
+autoplay: {
+  delay: 6000,
+  disableOnInteraction: false,
+},
+breakpoints: {
+    1: {
+        slidesPerView: 1,
+    },
+
+    740: {
+        slidesPerView: 2,
+    },
+
+    1024: {
+        slidesPerView: 3,
+    },
+},
+
+});
 }
