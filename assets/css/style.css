@@ -151,6 +151,9 @@
 .changeb a {
     color: var(--text-color);
 }
+.changeb a:hover {
+    color: var(--text-color);
+}
 /* Open and Close */
 /*
 .close-button div {
@@ -484,8 +487,6 @@ section {
     color: var(--white-color);
     padding: 5px 15px;
     font-size: 1.5rem;
-    /* border-radius: 25px;
-     */
     clip-path: polygon(100% 0, 100% 100%, 50% 85%, 0 100%, 0 0);
 }
 .card-action-list {
@@ -1066,6 +1067,42 @@ section {
 .pro-qty .qtybtn.dec {
     font-size: 3rem;
 }
+
+
+.qty_container .quantity .pro-qtys {
+    width: 123px;
+    height: 46px;
+    border: 2px solid #ebebeb;
+    padding: 0 15px;
+    float: left;
+    margin-right: 14px;
+}
+.qty_container .quantity .pro-qtys input {
+    text-align: center;
+    width: 52px;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    color: #4c4c4c;
+    line-height: 40px;
+    float: left;
+}
+
+
+.qty_container .quantity .pro-qtys .qtybtns {
+    font-size: 2.4rem;
+    color: #b2b2b2;
+    float: left;
+    line-height: 38px;
+    cursor: pointer;
+    width: 18px;
+}
+.pro-qtys .qtybtns.decs {
+    font-size: 3rem;
+}
+
+
 .primary-btn {
     display: inline-block;
     font-size: 14px;
@@ -1315,7 +1352,6 @@ section {
 .cart-collaterals {
     width: 80%;
     margin: 0 auto;
-    /* visibility: visible; */
 }
 
 .cart-total-heading {
