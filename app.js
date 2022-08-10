@@ -21,10 +21,10 @@ app.config(function($routeProvider) {
       templateUrl:'checkout.html',
       controller: 'checkoutController'
     })
-    // .when('/about', {
-    //   templateUrl: 'about.html',
-    //   controller: 'aboutController'
-    // })
+    .when('/about', {
+      templateUrl: 'about.html',
+      controller: 'aboutController'
+    })
 
     .otherwise({redirectTo: '/'});
 });
