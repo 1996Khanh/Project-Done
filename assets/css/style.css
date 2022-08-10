@@ -20,6 +20,16 @@
     width: 100%;
     background: linear-gradient(180deg, rgba(0,0,0,0.45) 0px, transparent 100%);
 }
+.main-header a:hover {
+    color: var(--white-color);
+}
+.basic-header {
+    position: relative;
+    background: rgba(255, 255, 255, 0.95);
+}
+.basic-header a {
+    color: var(--text-color) !important;
+}
 .menu_affix {
     position: relative;
 }
@@ -1099,9 +1109,7 @@ section {
     background: -moz-linear-gradient(-45deg,rgba(104,79,64,1) 0,rgba(253,184,34,1) 100%);
     background: -webkit-linear-gradient(-45deg,rgba(104,79,64,1) 0,rgba(253,184,34,1) 100%) !important;
 }
-.page-color-text a {
-    color: var(--text-color) ;
-}
+
 .page-container {
     position: relative;
     z-index: 3;
